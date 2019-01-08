@@ -1,4 +1,4 @@
-# Plante_Connectee
-Projet B1 MONT_LEDENTU Plante connectée
+# Documentation technique du projet Plante Connectée
 
-Tous les codes liés au projet Plante connectée.
+##Descriptif du projet :
+
