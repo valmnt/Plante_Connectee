@@ -6,7 +6,7 @@ Nous sommes l’entreprise Connected Flowers qui souhaite développer un objet c
 
 ## Les Algorithmes :
 
-![algo](C:\Users\vmmon\Desktop\algo1)
+![algo](valmnt/Plante_Connectee/img/algo1)
 
 
 
