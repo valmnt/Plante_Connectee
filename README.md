@@ -7,6 +7,10 @@ Nous sommes l’entreprise Connected Flowers qui souhaite développer un objet c
 ## Les Algorithmes :
 
 ![algo](/img/Algo1.png)
+![algo](/img/algo2.png)
+![algo](/img/algo3.png)
+![algo](/img/algo4.png)
+![algo](/img/algo5.png)
 
 
 
