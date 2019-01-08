@@ -16,8 +16,8 @@ Nous sommes l’entreprise Connected Flowers qui souhaite développer un objet c
 
 Nous avons simulé la lecture des capteurs de l’Arduino en langage C. Seulement à la place de lire les capteurs directement nous avons simplement simulé les capteurs par un fichier préalablement crée et contenant une valeur. Ce qui nous donne l’algorithmes ci-dessous en Langage C.
 
-![ouverturefichier](/img/ouverturefichier1.png)
-![ouverturefichier](/img/ouverturefichier2.png)
-![ouverturefichier](/img/ouverturefichier3.png)
+![ouverturefichier](/img/ouverturefichier1.PNG)
+![ouverturefichier](/img/ouverturefichier2.PNG)
+![ouverturefichier](/img/ouverturefichier3.PNG)
 
 
