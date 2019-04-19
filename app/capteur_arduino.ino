@@ -59,7 +59,6 @@ and we calculated the minimum level of drought. */
 make the connection at thinger.io*/
 void setup() 
 {
-  Serial.begin(115200);
   dht.begin();
   pinMode(LED, OUTPUT);
   pinMode(redPin, OUTPUT);
