@@ -2,6 +2,7 @@ import requests
 import json
 import getpass
 import time
+import sys
 
 url_api = "https://api.thinger.io/"
 parametre = "oauth/token"
@@ -15,9 +16,13 @@ monjson = json.dumps([])
 
 sortieduprogramme = 0
 i = 0
-   
+alert_error = 0
 userExist = False
 while userExist == False:
+    if(alert_error >= 1):
+        print("")
+        print("Login or password incorrect")
+        print("")
 
     login = input ("Login : ")
     psw = getpass.getpass("Password : ")
@@ -27,32 +32,39 @@ while userExist == False:
     "username": login,
     "password": psw
     }
-
+    alert_error =+ 1
         
     validtoken = requests.post(main_api, data= mydata).json()
     userExist = "access_token" in validtoken
     
-parametre ="v1/users/valmnt/devices?authorization="+ validtoken["access_token"]
+parametre ="v1/users/" + login + "/devices?authorization="+ validtoken["access_token"]
 main_api =url_api + parametre
 object_api = requests.get(main_api, params = mydata)
-    
+
 while (sortieduprogramme == 0):
+
+    devices = object_api.json()
 
     print("Actualisation des devices...")
             
-    devices = object_api.json()
-
     print ("Voici la liste des devices disponibles : ")
+    nb_device_connecte = 0
     for device in devices:
-        print(device["device"])
+        if(device["connection"]["active"] == True):
+            print(device["device"])
+            nb_device_connecte += 1
+
+    if (nb_device_connecte == 0):
+        print("Pas devices connectés !")
+        exit(0)
     print("")
     choice = input ("Quel appareil voulez-vous sélectionner ? ")
 
     for device in devices:
         if choice == device["device"]:
             app = device["device"]
-    print("")
-    sortieduprogramme = 1
+            print("")
+            sortieduprogramme = 1
 
 tableauPlante = []
 tableau = []
@@ -67,33 +79,6 @@ nomPlanteValide=0
 numeroPlant = 0
 choixInformationsValide = "oui"
 verifExit = 0
-
-parametres ="v2/users/valmnt/devices/arduino/LuxValue?authorization="+ validtoken["access_token"]
-main_api =url_api + parametres
-object_api = requests.get(main_api, params=mydata)
-lux = object_api.json()
-
-parametres ="v2/users/valmnt/devices/arduino/AtmosphericHumidity?authorization="+ validtoken["access_token"]
-main_api =url_api + parametres
-object_api = requests.get(main_api, params=mydata)
-ha = object_api.json()
-
-parametres ="v2/users/valmnt/devices/arduino/Celsius?authorization="+ validtoken["access_token"]
-main_api =url_api + parametres
-object_api = requests.get(main_api, params=mydata)
-t = object_api.json()
-
-parametres ="v2/users/valmnt/devices/arduino/SoilMoisture?authorization="+ validtoken["access_token"]
-main_api =url_api + parametres
-object_api = requests.get(main_api, params=mydata)
-ht = object_api.json()
-
-dicoCapteur = {
-    "La luminosite": lux['out'],
-    "La temperature":t['out'],
-    "L'humidite de la terre":ht['out'],
-    "L'humidite de l'air":ha['out'],
-}
 
 def AnalyseCapteur(valeurCapteur,valeurRequise):
     print(valeurCapteur,": ",end="")
@@ -146,6 +131,52 @@ while compteurDico <= len(tableauPlante[x])-2:
 
 while exit == 0:
     while choixInformationsValide == "oui":
+        parametres ="v2/users/valmnt/devices/" + app + "/LuxValue?authorization="+ validtoken["access_token"]
+        main_api =url_api + parametres
+        object_api = requests.get(main_api, params=mydata)
+        lux = object_api.json()
+
+        parametres ="v2/users/valmnt/devices/" + app + "/AtmosphericHumidity?authorization="+ validtoken["access_token"]
+        main_api =url_api + parametres
+        object_api = requests.get(main_api, params=mydata)
+        ha = object_api.json()
+
+        parametres ="v2/users/valmnt/devices/" + app + "/Celsius?authorization="+ validtoken["access_token"]
+        main_api =url_api + parametres
+        object_api = requests.get(main_api, params=mydata)
+        t = object_api.json()
+
+        parametres ="v2/users/valmnt/devices/" + app + "/SoilMoisture?authorization="+ validtoken["access_token"]
+        main_api =url_api + parametres
+        object_api = requests.get(main_api, params=mydata)
+        ht = object_api.json()
+        dicoCapteur = {
+        "La luminosite": lux['out'],
+        "La temperature":t['out'],
+        "L'humidite de la terre":ht['out'],
+        "L'humidite de l'air":ha['out'],
+        }
+
+        if(lux['out'] == None):
+            print("")
+            print("Pas de capteur de lumière")
+            input ("Appuyez sur entrée pour quitter........")
+            print("")
+            sys.exit()
+        if(ht['out'] == None):
+            print("")
+            print("Pas de capteur d'humidité de terre")
+            input ("Appuyez sur entrée pour quitter........")
+            print("")
+            sys.exit()
+        if(t['out'] == None or ha['out'] == None):
+            print("")
+            print("Pas de capteur de température")
+            input ("Appuyez sur entrée pour quitter........")
+            print("")
+            sys.exit()
+            
+        print("")
         choixInformations = input("Voulez vous voir les besoins de la plante(0), son état actuel(1) ou une description de la plante(2) ?")
         if choixInformations == "0":
             print(dico["nom"]," : ")
@@ -175,7 +206,6 @@ while exit == 0:
         verifExit=0
         while verifExit == 0:
             choixInformationsValide = str(input("Voulez vous continuer à utiliser l'appli ?(oui ou non)"))
-            print(choixInformationsValide)
             if (choixInformationsValide != "oui" and choixInformationsValide != "non"):
                 print("Je ne comprends pas.")
                 verifExit = 0

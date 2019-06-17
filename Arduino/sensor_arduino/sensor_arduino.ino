@@ -1,8 +1,5 @@
-
 /*This program allows you to read the brightness sensor and display the value on
-thinger.io as well as controlling a led through a present button
-in the dashboard of thinger.io*/
-
+thinger.io*/
 #define _DEBUG_                         // debug method
 #define _DISABLE_TLS_                   // disable tls encryption
 
@@ -27,10 +24,6 @@ in the dashboard of thinger.io*/
 ThingerWifi thing(USERNAME, DEVICE_ID, DEVICE_CREDENTIAL);  
 APDS9301 apds;
 
-/* In this program, we read the DHT11 Humidity and Temperature and if H 30% or T > 30 °C blink red LED.
-We read the SEN0193 Moisture value and if it is very dry (higher 20%), we switch on yellow
-LED. On any other case, we leave the LED green.*/
-
 #include "DHT.h"        // import the library DHT 
 
 #define DHTPIN 2        // initialize the value of the pin at 2    
@@ -42,11 +35,7 @@ int ht;                 // initialization of variable ht (soil moisture)
 int lux;                // initialization of variable lux (luminoux)
 float h      = 0;       // initialization of the variable h and we assign the value 0 (humidity)         
 float t      = 0;       // initialisation of the variable t and we assign the value 0 (temperature)            
-int dry      = 0;       // initialisation of the variable dry and we assign the value 0
-
-/*The setup function initializes all the pins than we need in output.
-The Data Debit is initialized at 115 200 bit per second, the DHT library is started
-and we calculated the minimum level of drought. */                       
+                     
 /*The setup function configure the sensor, indicates the data troughput and
 make the connection at thinger.io*/
 void setup() 
@@ -97,11 +86,8 @@ void setup()
   Serial.println(apds.getHighThreshold());                           
 }
 
-/*The loop function will manage the colors of the led according to the 
-humidity of the earth as well as the temperature and humidity of the air.*/
 /* The loop function is the part that will read and display the values 
-of brightness sensor in the console as well as add widgets  
-to control the led and to display luminux values on thinger.io*/
+of brightness sensor in the console and display luminux values on thinger.io*/
 void loop() 
 { 
   apds.clearIntFlag();                          
@@ -130,7 +116,7 @@ void loop()
   {
     Serial.println("Impossible reading !");
   }
-  /*otherwise the humidity, temperature and humidity of the earth values are displayed*/
+  /*otherwise the humidity, temperature, humidity of the earth and luminosity values are displayed*/
   else                                     
   {
     Serial.print(" ");
