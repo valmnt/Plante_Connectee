@@ -130,7 +130,7 @@ void loop()
   {
     Serial.println("Impossible reading !");
   }
-  /*otherwise the humidity and temperature values are displayed*/
+  /*otherwise the humidity, temperature and humidity of the earth values are displayed*/
   else                                     
   {
     Serial.print(" ");
