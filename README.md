@@ -11,6 +11,7 @@ La base de donnée comprend : Le Nom de la plante, une Catégorisation de la pla
 Notre code Arduino permet de lire les differentes valeurs de nos différents capteurs connectés à l'Arduino Uno Wifi rev 2. Ensuite, notre programme affiche ces valeurs dans la commande de l'IDE Arduino et les
 envoie sur Thinger.io
 
+### Interface Thinger.io
 ![ouverturefichier](/img/thinger_img.PNG)
 
 ## Python
