@@ -2,9 +2,9 @@
 
 ## Descriptif du projet :
 
-Nous sommes l’entreprise Connected Flowers qui avont développé un objet connecté permettant à une personne sans connaissance particulière en botanique de faire pousser des plantes chez soi ou en extérieur. Connected Flowers 
-fournit une base de données, que l’utilisateur peut étendre, qui contient initialement les spécifications d’environ 30 plantes de la région. 
-La base de donnée comprend : Le Nom de la plante, une Catégorisation de la plante, la Description, l’humidité optimale du sol, la température atmosphérique optimale, la luminosité optimale, la période de floraison.
+Nous sommes l’entreprise Connected Flowers qui avont développé un objet connecté permettant à une personne sans connaissance particulière en botanique de faire pousser des plantes chez soi ou en extérieur. Nous 
+fournissonsune base de données, que l’utilisateur peut étendre, qui contient initialement les spécifications d’environ 30 plantes de la région. 
+La base de donnée comprend : Le Nom de la plante, une Catégorisation de la plante, la description, l’humidité optimale du sol, la température atmosphérique optimale, la luminosité optimale, la période de floraison.
 
 ## Arduino
 
@@ -23,5 +23,5 @@ avec un indicateur qui vous indiquera si les valeurs sont trop haute ou trop bas
 ### Interface de L'application
 ![ouverturefichier](/img/app_img.PNG)
 
-### Base de donée des plantes
+### Base de donnée des plantes
 ![ouverturefichier](/img/bdd_img.PNG)
