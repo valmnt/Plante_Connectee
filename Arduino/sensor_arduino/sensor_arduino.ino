@@ -1,4 +1,4 @@
-/*This program allows you to read the brightness sensor and display the value on
+/*This program allows you to read all sensors and display values on
 thinger.io*/
 #define _DEBUG_                         // debug method
 #define _DISABLE_TLS_                   // disable tls encryption
@@ -36,8 +36,8 @@ int lux;                // initialization of variable lux (luminoux)
 float h      = 0;       // initialization of the variable h and we assign the value 0 (humidity)         
 float t      = 0;       // initialisation of the variable t and we assign the value 0 (temperature)            
                      
-/*The setup function configure the sensor, indicates the data troughput and
-make the connection at thinger.io*/
+/*The setup function configure sensors, indicates the data troughput and
+the used wifi to be connected at thinger.io*/
 void setup() 
 {
   dht.begin();
@@ -87,7 +87,7 @@ void setup()
 }
 
 /* The loop function is the part that will read and display the values 
-of brightness sensor in the console and display luminux values on thinger.io*/
+of sensors in the console and display sensors values on thinger.io*/
 void loop() 
 { 
   apds.clearIntFlag();                          
@@ -111,7 +111,7 @@ void loop()
   /*the temperature reading is assigned to the varible t*/ 
   t = dht.readTemperature(); 
    
-  /*If the sensor fails to pick up values then we say "impossible reading"*/
+  /*if the sensor fails to pick up values then we say "impossible reading"*/
   if (isnan(h) || isnan(t))                 
   {
     Serial.println("Impossible reading !");
