@@ -4,6 +4,9 @@ import getpass
 import time
 import sys
 
+print("Bienvenue sur Connected Flowers !");
+print("Veuillez entrer vos identifiants thinger.io ou les créer sur le site : https://thinger.io");
+
 url_api = "https://api.thinger.io/"
 parametre = "oauth/token"
 
@@ -21,11 +24,11 @@ userExist = False
 while userExist == False:
     if(alert_error >= 1):
         print("")
-        print("Login or password incorrect")
+        print("nom d'utilisateur ou mot de passe incorrect")
         print("")
 
-    login = input ("Login : ")
-    psw = getpass.getpass("Password : ")
+    login = input ("nom d'utilisateur : ")
+    psw = getpass.getpass("mot de passe : ")
     mydata = {
     "Content-Type": "application/x-www-form-urlencoded",
     "grant_type": "password",
@@ -45,9 +48,9 @@ while (sortieduprogramme == 0):
 
     devices = object_api.json()
 
-    print("Actualisation des devices...")
+    print("Actualisation des cartes arduino...")
             
-    print ("Voici la liste des devices disponibles : ")
+    print ("Voici la liste des cartes disponibles : ")
     nb_device_connecte = 0
     for device in devices:
         if(device["connection"]["active"] == True):
@@ -55,7 +58,7 @@ while (sortieduprogramme == 0):
             nb_device_connecte += 1
 
     if (nb_device_connecte == 0):
-        print("Pas devices connectés !")
+        print("Pas d'arduino connectés !")
         exit(0)
     print("")
     choice = input ("Quel appareil voulez-vous sélectionner ? ")
@@ -116,7 +119,7 @@ while nomPlanteValide == 0:
         y=y+1
     x=0
     y=0
-    numeroPlant = input("Quelle est le nom de la plante que vous voulez chouchouter ? ")
+    numeroPlant = input("Quel est le nom de la plante que vous voulez chouchouter ? ")
     for x in range(0,len(tableauNomPlante)):
         if numeroPlant == tableauNomPlante[x]:
             print("Vous avez choisis : ",numeroPlant)
@@ -128,6 +131,8 @@ while nomPlanteValide == 0:
 while compteurDico <= len(tableauPlante[x])-2:
     dico[tableauPlante[x][compteurDico]]=tableauPlante[x][compteurDico+1]
     compteurDico=compteurDico+2
+
+print("chargement en cours...");
 
 while exit == 0:
     while choixInformationsValide == "oui":
@@ -165,7 +170,7 @@ while exit == 0:
             sys.exit()
         if(ht['out'] == None):
             print("")
-            print("Pas de capteur d'humidité de terre")
+            print("Pas de capteur d'humidité du sol")
             input ("Appuyez sur entrée pour quitter........")
             print("")
             sys.exit()
