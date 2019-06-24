@@ -23,3 +23,5 @@ avec un indicateur qui vous indiquera si les valeurs sont trop haute ou trop bas
 ### Interface de L'application
 ![ouverturefichier](/img/app_img.PNG)
 
+### Base de donée des plantes
+![ouverturefichier](/img/bdd_img.PNG)
