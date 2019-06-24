@@ -6,7 +6,7 @@ thinger.io*/
 #include "Wire.h"                       // includ the library wire
 #include <Sparkfun_APDS9301_Library.h>  // includ the library for the lux sensor
 #include <WiFi.h>         
-#include <ThingerWifi.h> //includ the thinger.io library 
+#include <ThingerWifi.h>                //includ the thinger.io library 
 
 #define THINGER_USE_STATIC_MEMORY       
 #define THINGER_STATIC_MEMORY_SIZE 512
@@ -17,10 +17,8 @@ thinger.io*/
 #define SSID "A3Pro"                     // set connexion name A3Pro
 #define SSID_PASSWORD "valentin"         // set password connexion valentin
 
-#define INT_PIN 10              // We'll connect the INT pin from our sensor to the
-                               // INT0 interrupt pin on the Arduino.
+#define INT_PIN 10              // We'll connect the INT pin to the pin 10
 
-// make the connection between entered informations and thinger.io
 ThingerWifi thing(USERNAME, DEVICE_ID, DEVICE_CREDENTIAL);  
 APDS9301 apds;
 
@@ -87,7 +85,8 @@ void setup()
 }
 
 /* The loop function is the part that will read and display the values 
-of sensors in the console and display sensors values on thinger.io*/
+of sensors in the console. The loop function connect sensors at thinger.io and display
+sensors values on thinger.io*/
 void loop() 
 { 
   apds.clearIntFlag();                          

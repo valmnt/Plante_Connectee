@@ -20,4 +20,6 @@ Notre code Python permet de creer une application en ligne de commande (CMD). De
 compte Thinger.io et ensuite vous sélectionnez votre appareil. Une liste de plante vous sera proposé, il faudra en choisir une parmit celles proposées et ensuite vous pourrez voir ses informations globales ainsi que les valeurs des capteurs
 avec un indicateur qui vous indiquera si les valeurs sont trop haute ou trop basse.
 
+### Interface de L'application
+![ouverturefichier](/img/app_img.PNG)
 
