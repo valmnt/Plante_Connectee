@@ -20,12 +20,14 @@
 [Thinger](https://console.thinger.io/#/login)
 ![device_img](img/device.PNG)
 
-*Username -> Thinger.io*
-*Device ID -> nom de l'appareil*
-*Device_credential -> Token thinger.io*
-*SSID / SSID_PASSWORD -> information relative de la connexion*
+*Champs à remplir avec vos informations*
 
 ![connexion_img](img/connexion.PNG)
+
+* Username -> Thinger.io
+* Device ID -> nom de l'appareil
+* Device_credential -> Token thinger.io
+* SSID / SSID_PASSWORD -> information relative de la connexion
 
 ##  Guide d'utilisation de l'application
 
