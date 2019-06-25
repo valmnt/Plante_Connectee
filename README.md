@@ -15,7 +15,7 @@
 
 ## Configuration
 
-###*Creer un device dans votre panneau de configuration Thinger.io*
+### *Creer un device dans votre panneau de configuration Thinger.io*
 
 [Thinger](https://console.thinger.io/#/login)
 ![device_img](img/device.PNG)
