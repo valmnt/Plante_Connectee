@@ -20,7 +20,10 @@
 [Thinger](https://console.thinger.io/#/login)
 ![device_img](img/device.PNG)
 
-*Renseigner dans le code arduino les informations lié à votre connexion wifi ainsi que le token délivré par Thinger.io*
+*Username -> Thinger.io*
+*Device ID -> nom de l'appareil*
+*Device_credential -> Token thinger.io*
+*SSID / SSID_PASSWORD -> information relative de la connexion*
 
 ![connexion_img](img/connexion.PNG)
 
