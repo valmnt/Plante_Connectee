@@ -31,6 +31,7 @@
 
 ##  Guide d'utilisation de l'application
 
+* Téléverser le code arduino 
 * Executer le fichier python_interfaces.py
 * Se connecter avec ses identifiants Thinger.io
 * Sélectionner l'appareil que vous souhaitez utiliser
@@ -39,15 +40,15 @@
 
 ### Fonctionnalité des propositions :
 
-#### Les besoins
+#### 1.Les besoins
 
 Permet de voir les conditions idéales relatives à chaques plantes
 
-#### Les informations
+#### 2.Les informations
 
 Permet de voir en direct les informations que les capteurs envoyent et les comparent aux conditions idéales
 
-#### Biographie
+#### 3.Biographie
 
 Donne des indications / renseignements sur la plante (géoalisation, nom complet...)
 
