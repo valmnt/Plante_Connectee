@@ -24,7 +24,7 @@
 
 ![connexion_img](img/connexion.PNG)
 
-* Username -> Thinger.io
+* Username -> username Thinger.io
 * Device ID -> nom de l'appareil
 * Device_credential -> Token thinger.io
 * SSID / SSID_PASSWORD -> information relative de la connexion
@@ -53,3 +53,4 @@ Permet de voir en direct les informations que les capteurs envoyent et les compa
 Donne des indications / renseignements sur la plante (géoalisation, nom complet...)
 
 
+### Made by @MontValentin and @ChomentonMatthias
