@@ -18,11 +18,11 @@
 *Creer un device dans votre panneau de configuration Thinger.io*
 
 [Thinger](https://console.thinger.io/#/login)
-![device_img](/img/device.png)
+![device_img](img/device.png)
 
 *Renseigner dans le code arduino les informations lié à votre connexion wifi ainsi que le token délivré par Thinger.io*
 
-![connexion_img](/img/connexion.png)
+![connexion_img](img/connexion.png)
 
 ##  Guide d'utilisation de l'application
 
@@ -32,7 +32,7 @@
 * Selectionner la plante que vous désirez
 * Selectionner une des propositions suggérées
 
-### Fonctionnalité des propositions
+### Fonctionnalité des propositions :
 
 #### Les besoins
 
