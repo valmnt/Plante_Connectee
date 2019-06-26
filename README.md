@@ -1,9 +1,9 @@
-﻿# Documentation technique du projet Plante Connectée
+﻿# Guide de l'application Plante Connectée
 
 
 ## Matériels requis
 * Arduino Uno Wifi Rev 2
-* DHT11 (capteur Humidité de l'air et de temprature)
+* DHT11 (capteur Humidité de l'air et de température)
 * APDS 9301 (capteur d'humidité du sol)
 * SEN019 (capteur de luminosité)
 
@@ -27,7 +27,7 @@
 * Username -> username Thinger.io
 * Device ID -> nom de l'appareil
 * Device_credential -> Token thinger.io
-* SSID / SSID_PASSWORD -> information relative de la connexion
+* SSID / SSID_PASSWORD -> information relative à la connexion
 
 ##  Guide d'utilisation de l'application
 
@@ -38,7 +38,7 @@
 * Selectionner la plante que vous désirez
 * Selectionner une des propositions suggérées
 
-### Fonctionnalité des propositions :
+### Fonctionnalités des propositions :
 
 #### 1.Les besoins
 
@@ -50,7 +50,7 @@ Permet de voir en direct les informations que les capteurs envoyent et les compa
 
 #### 3.Biographie
 
-Donne des indications / renseignements sur la plante (géoalisation, nom complet...)
+Donne des indications / renseignements sur la plante (géocalisation, nom complet...)
 
 
 #### Made by @MontValentin and @ChomentonMatthias

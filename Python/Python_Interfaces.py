@@ -188,7 +188,7 @@ while exit == 0:
             sys.exit()
         if(t['out'] == None or ha['out'] == None):
             print("")
-            print("Pas de capteur de température")
+            print("Pas de capteur de température ou capteur défectueux")
             input ("Appuyez sur entrée pour quitter........")
             print("")
             sys.exit()
@@ -222,6 +222,7 @@ while exit == 0:
             print("Cela ne fait pas partie des choix possibles.")
 
         # Vérification de la poursuite ou non du programme #
+        print("")
         verifExit=0
         while verifExit == 0:
             choixInformationsValide = str(input("Voulez vous continuer à utiliser l'appli ?(oui ou non)"))
